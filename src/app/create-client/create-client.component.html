@@ -1,1 +1,16 @@
-<h2>Créer un nouveau client</h2>
+<section class="container">
+    <h2>Créer un nouveau client</h2>
+
+    <form (ngSubmit) = "onSubmit()">
+            <div class="mb-3 form-group">
+                <label class="form-label">Nom/Raison Sociale:</label>
+                <input type="text" class="form-control" id="raisonSociale"
+                    [(ngModel)] = "client.raisonSociale" name="raisonSociale">
+            </div>
+            <div class="mb-3 form-group">
+                <label class="form-label">Numéro de SIREN:</label>
+                <input type="text" class="form-control" id="siren" [(ngModel)]="client.siren" name="siren">
+            </div>
+            <button type="submit" class="btn btn-primary">Ajouter</button>
+    </form>
+</section>

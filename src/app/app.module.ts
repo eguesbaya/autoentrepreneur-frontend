@@ -8,6 +8,7 @@ import { ClientListComponent } from './client-list/client-list.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ContactListComponent } from './contact-list/contact-list.component';
 import { CreateClientComponent } from './create-client/create-client.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CreateClientComponent } from './create-client/create-client.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
