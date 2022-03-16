@@ -8,7 +8,7 @@ import { Client } from './client';
 })
 export class ClientService {
   
-  private baseURL = "http://localhost:8080/clients";
+  private baseURL = "http://localhost:8080/clients/";
 
   constructor(private HttpClient: HttpClient) { }
 
@@ -21,11 +21,12 @@ export class ClientService {
   }
 
   getClientById(id: number): Observable <Client> {
-    return this.HttpClient.get<Client>(this.baseURL + "/" + id);
+    return this.HttpClient.get<Client>(this.baseURL + id);
   }
 
+  //This is a REST client call
   deleteClientById(id: number): Observable<Object> {
-    return this.HttpClient.delete(this.baseURL + "/"+ id);
+    return this.HttpClient.delete(this.baseURL + id);
   }
 
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Client } from '../client';
 import { ClientService } from '../client.service';
 
@@ -13,7 +13,18 @@ export class ViewClientComponent implements OnInit {
   client: Client;
   id: number;
 
-  constructor(private clientService: ClientService, private route:ActivatedRoute) { }
+  constructor(private clientService: ClientService, private route: ActivatedRoute, private router: Router) { }
+  
+  deleteClient(id: number) {
+    this.clientService.deleteClientById(id).subscribe(data => {
+      console.log(data);
+    })
+    this.goToClientList();
+  }
+
+  goToClientList() {
+    this.router.navigate(["client-list"]);
+  }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
