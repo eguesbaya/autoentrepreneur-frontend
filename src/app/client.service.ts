@@ -18,7 +18,11 @@ export class ClientService {
 
   createClient(client: Client): Observable<Object> {
     return this.HttpClient.post(this.baseURL, client);
-    
   }
+
+  getClientById(id: number): Observable <Client> {
+    return this.HttpClient.get<Client>(`${this.baseURL}/${id}`);
+  }
+
 
 }

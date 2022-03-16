@@ -24,6 +24,10 @@ export class ClientListComponent implements OnInit {
     this.router.navigate(["create-client"]);
   }
 
+  goToViewClient(id : number) {
+    this.router.navigate(["view-client", id]);
+  }
+
   ngOnInit(): void {
     this.getClients();
   }

@@ -21,7 +21,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let client of clients">
+            <tr *ngFor="let client of clients" (click) = "goToViewClient(client.id)">
                 <td>{{ client.id }}</td>
                 <td>{{ client.raisonSociale }}</td>
                 <td>{{ client.siren }}</td>
@@ -44,7 +44,6 @@
                         Editer</button> -->
 
                 </td>
-
             </tr>
         </tbody>
     </table>
