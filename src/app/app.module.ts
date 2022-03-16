@@ -9,13 +9,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { ContactListComponent } from './contact-list/contact-list.component';
 import { CreateClientComponent } from './create-client/create-client.component';
 import { FormsModule } from '@angular/forms';
+import { ViewClientComponent } from './view-client/view-client.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ClientListComponent,
     ContactListComponent,
-    CreateClientComponent
+    CreateClientComponent,
+    ViewClientComponent
   ],
   imports: [
     BrowserModule,
