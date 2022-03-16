@@ -1,0 +1,21 @@
+<section class="container col-6">
+    <h2>Créer un nouveau client</h2>
+
+    <!-- TODO: form validation -->
+    <form (ngSubmit) = "onSubmit()">
+            <div class="mb-3 form-group">
+                <label class="form-label">Nom/Raison Sociale:</label>
+                <input type="text" class="form-control" id="raisonSociale"
+                    [(ngModel)] = "client.raisonSociale" name="raisonSociale" required>
+            </div>
+            <div class="mb-3 form-group">
+                <label class="form-label">Numéro de SIREN:</label>
+                <input type="text" class="form-control" id="siren" [(ngModel)]="client.siren" name="siren"
+                aria-describedby="sirenHelp" required>
+            </div>
+            <div id="sirenHelp" class="form-text">
+                Le numéro de SIREN est un numéro à 9 chiffres qui permet d'identifier votre client.
+            </div>
+            <button type="submit" class="btn btn-primary my-4">Ajouter</button>
+    </form>
+</section>
