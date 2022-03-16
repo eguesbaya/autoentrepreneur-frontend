@@ -19,7 +19,7 @@
     <div class="card-body">
         <h4 class="card-title"> {{ client.raisonSociale }}</h4>
         <p class="card-text">Numéro de SIREN: {{ client.siren }}</p>
-        <p class="card-text"><small class="text-muted">Dernière mise à jour: {{ client.dateMAJ }}</small></p>
+        <p class="card-text"><small class="text-muted">Dernière mise à jour: {{ client.dateMAJ | date }}</small></p>
         <div class="d-inline">
             <!-- TODO: Link -->
             <a href="#" class="btn btn-primary me-1 ">
@@ -44,7 +44,7 @@
     </div>
     <!-- TODO: fix this field -->
     <footer class="card-footer text-muted">
-        Créé le: {{ client.dateCreation }}
+        Créé le: {{ client.dateCreation | date }}
     </footer>
 </article>
 
