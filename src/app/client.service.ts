@@ -24,5 +24,9 @@ export class ClientService {
     return this.HttpClient.get<Client>(this.baseURL + id);
   }
 
+  updateClient(id: number, client: Client): Observable<Object>{
+    return this.HttpClient.post(this.baseURL + id, client)
+  }
+
 
 }
