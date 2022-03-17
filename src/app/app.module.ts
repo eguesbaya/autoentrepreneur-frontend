@@ -10,6 +10,7 @@ import { ContactListComponent } from './contact-list/contact-list.component';
 import { CreateClientComponent } from './create-client/create-client.component';
 import { FormsModule } from '@angular/forms';
 import { ViewClientComponent } from './view-client/view-client.component';
+import { UpdateClientComponent } from './update-client/update-client.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ViewClientComponent } from './view-client/view-client.component';
     ClientListComponent,
     ContactListComponent,
     CreateClientComponent,
-    ViewClientComponent
+    ViewClientComponent,
+    UpdateClientComponent
   ],
   imports: [
     BrowserModule,
