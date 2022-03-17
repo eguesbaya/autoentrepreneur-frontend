@@ -11,9 +11,20 @@ import { ClientService } from '../client.service';
 export class UpdateClientComponent implements OnInit {
 
   id: number;
-  client: Client;
+  client: Client = new Client();
   
-  constructor(private clientService: ClientService, private route:ActivatedRoute) { }
+  constructor(private clientService: ClientService, private route: ActivatedRoute, private router:Router) { }
+
+  goToViewClient() {
+    return this.router.navigate(['/view-client', this.id]);
+  }
+  
+  onSubmit(): void {
+    this.clientService.updateClient(this.id, this.client).subscribe(data => {
+      this.goToViewClient();
+    }, error => console.log(error)
+    );
+  }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
