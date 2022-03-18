@@ -28,6 +28,10 @@ export class ClientService {
   deleteClientById(id: number): Observable<Object> {
     return this.HttpClient.delete(this.baseURL + id);
   }
+  
+  updateClient(id: number, client: Client): Observable<Object>{
+    return this.HttpClient.put(this.baseURL + id, client)
+  }
 
 
 

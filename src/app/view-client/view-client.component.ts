@@ -28,6 +28,11 @@ export class ViewClientComponent implements OnInit {
     this.router.navigate(["clients"]);
   }
 
+  
+  updateClient(id:number) {
+    this.router.navigate(['update-client', id]);
+  }
+
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
     this.clientService.getClientById(this.id).subscribe(data => {
