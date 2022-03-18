@@ -18,12 +18,14 @@ export class ViewClientComponent implements OnInit {
   deleteClient(id: number) {
     this.clientService.deleteClientById(id).subscribe(data => {
       console.log(data);
+      this.clientService.getClientById(this.id);
+      this.goToClientList();
     })
-    this.goToClientList();
+    
   }
 
   goToClientList() {
-    this.router.navigate(["client-list"]);
+    this.router.navigate(["clients"]);
   }
 
   ngOnInit(): void {

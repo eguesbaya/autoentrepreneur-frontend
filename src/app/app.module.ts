@@ -10,7 +10,6 @@ import { ContactListComponent } from './contact-list/contact-list.component';
 import { CreateClientComponent } from './create-client/create-client.component';
 import { FormsModule } from '@angular/forms';
 import { ViewClientComponent } from './view-client/view-client.component';
-import { DeleteClientComponent } from './delete-client/delete-client.component';
 
 @NgModule({
   declarations: [
@@ -18,8 +17,7 @@ import { DeleteClientComponent } from './delete-client/delete-client.component';
     ClientListComponent,
     ContactListComponent,
     CreateClientComponent,
-    ViewClientComponent,
-    DeleteClientComponent
+    ViewClientComponent
   ],
   imports: [
     BrowserModule,
