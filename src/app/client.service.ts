@@ -24,9 +24,15 @@ export class ClientService {
     return this.HttpClient.get<Client>(this.baseURL + id);
   }
 
+  //This is a REST client call
+  deleteClientById(id: number): Observable<Object> {
+    return this.HttpClient.delete(this.baseURL + id);
+  }
+  
   updateClient(id: number, client: Client): Observable<Object>{
     return this.HttpClient.put(this.baseURL + id, client)
   }
+
 
 
 }
