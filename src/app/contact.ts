@@ -8,7 +8,7 @@ export class Contact {
     email: string;
     telephone: string;
     mobile: string;
-    client: Client
+    client: Client;
     dateCreation: Date;
     dateMAJ: Date;
 }

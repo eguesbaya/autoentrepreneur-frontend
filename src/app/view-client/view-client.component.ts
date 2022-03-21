@@ -10,26 +10,32 @@ import { ClientService } from '../client.service';
 })
 export class ViewClientComponent implements OnInit {
 
-  client: Client;
+  client: Client = {
+    id: 0,
+    raisonSociale: "",
+    siren: "",
+    dateCreation: new Date(0),
+    dateMAJ: new Date(0)
+  };
   id: number;
 
   constructor(private clientService: ClientService, private route: ActivatedRoute, private router: Router) { }
-  
+
   deleteClient(id: number) {
     this.clientService.deleteClientById(id).subscribe(data => {
       console.log(data);
       this.clientService.getClientById(this.id);
       this.goToClientList();
     })
-    
+
   }
 
   goToClientList() {
     this.router.navigate(["clients"]);
   }
 
-  
-  updateClient(id:number) {
+
+  updateClient(id: number) {
     this.router.navigate(['update-client', id]);
   }
 
