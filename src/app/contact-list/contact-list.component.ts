@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Contact } from '../contact';
 import { ContactService } from '../contact.service';
 
@@ -11,8 +12,11 @@ export class ContactListComponent implements OnInit {
 
   contacts: Contact[];
 
-  constructor(private contactService: ContactService) { }
+  constructor(private contactService: ContactService, private router:Router) { }
   
+  goToViewClient(id: number) {
+    this.router.navigate(["view-client", id]);
+  }
 
   private getContacts() {
     this.contactService.getAllContacts().subscribe(data => {
